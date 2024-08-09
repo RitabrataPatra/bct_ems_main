@@ -1,0 +1,41 @@
+<!-- employees/templates/employees/position_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Positions{% endblock %}
+
+{% block content %}
+<div class="text-center my-4">
+    <h1 class="fw-bold">Positions</h1>
+    <a class="btn btn-primary" href="{% url 'position_create' %}">Add New Position</a>
+</div>
+
+
+<ul class="d-flex flex-wrap align-items-center justify-content-center">
+    {% for position in positions %}
+    <div class="card d-flex flex-row mx-3" style="width: 18rem; height: auto;">
+        <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><u>{{ position.title }}</u></h5>
+            <p class="card-text">This is the department of {{ position.title }}</p>
+            <a href="{% url 'position_update' position.pk %}" class="btn btn-primary">Edit</a>
+            <a href="{% url 'position_delete' position.pk %}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+
+
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
+
+<ul>
+    {% for position in positions %}
+    <li>
+        {{ position.title }}
+        <a href=>Edit</a> |
+        <a href=>Delete</a>
+    </li>
+    {% endfor %}
+</ul>

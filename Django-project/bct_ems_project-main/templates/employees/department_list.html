@@ -1,0 +1,29 @@
+<!-- employees/templates/employees/department_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Departments{% endblock %}
+
+{% block content %}
+<div class="text-center my-4">
+  
+    <h1 class="fw-bold">Departments</h1>
+<a  class="btn btn-primary" href="{% url 'department_create' %}">Add New Department</a>
+</div>
+
+<ul class="d-flex flex-wrap align-items-center justify-content-center">
+    {% for department in departments %}
+        <div class="card d-flex flex-row mx-3" style="width: 18rem; height: auto;">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title"><u>{{ department.name }}</u></h5>
+              <p class="card-text">This is the department of {{ department.name }}</p>
+              <a href="{% url 'department_update' department.pk %}" class="btn btn-primary">Edit</a>
+              <a href="{% url 'department_delete' department.pk %}" class="btn btn-danger">Delete</a>
+            </div>
+          </div>
+
+    
+    {% endfor %}
+</ul>
+
+{% endblock %}

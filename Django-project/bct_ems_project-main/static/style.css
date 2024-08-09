@@ -1,0 +1,127 @@
+/* Header Body footer */
+/* .h11{
+    height: 20vh;
+}
+.h12{
+    height: 70vh;
+}
+.h13{
+    height: 10vh;
+} */
+
+
+/* Employee_Form */
+/* Form Container */
+main form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label Styles */
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Input Styles */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select,
+.form-group input[type="date"] {
+    width: 100%;
+    padding: 8px 12px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Error Messages */
+.form-errors {
+    color: #e74c3c;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    background-color: #35424a;
+    color: white;
+    /* padding: 10px 20px; */
+    border: none;
+    border-radius: 4px;
+    /* font-size: 1em; */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2a373f;
+}
+
+/* Cancel Link */
+main a {
+    /* display: inline-block; */
+    margin-top: 15px;
+    text-decoration: none;
+    color: #35424a;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+main a:hover {
+    color: #2a373f;
+}
+
+
+/* Base Form Table */
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+table thead th {
+    background-color: #35424a; 
+    color: white; 
+    padding: 12px;
+    text-align: left;
+    font-weight: 500;
+}
+
+table tbody td {
+    padding: 12px;
+    border: 1px solid #ddd; 
+    text-align: left;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; 
+}
+
+/* Table Hover Effect */
+table tbody tr:hover {
+    background-color: #f1f1f1; 
+}
+
+
+
+
+
+#foot{
+    position: relative;
+    top: 233px;
+}

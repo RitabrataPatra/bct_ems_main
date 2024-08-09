@@ -1,0 +1,17 @@
+<!-- employees/templates/employees/employee_confirm_delete.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Delete Employee{% endblock %}
+
+{% block content %}
+<h2 class="text-center fw-bold my-4">Are you sure you want to delete the profile of "{{ employee.first_name }} {{ employee.last_name }}"?</h2>
+
+<form method="post">
+    {% csrf_token %}
+    <div class="d-flex justify-content-between">
+        <button class="btn px-5 rounded-1 " type="submit">Yes, delete</button>
+        <a class="btn btn-danger m-0" href="{% url 'employee_list' %}">No, go back</a>
+    </div>
+</form>
+{% endblock %}

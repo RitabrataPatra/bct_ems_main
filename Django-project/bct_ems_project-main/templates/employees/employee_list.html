@@ -1,0 +1,33 @@
+<!-- employees/templates/employees/employee_list.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Employee List{% endblock %}
+
+{% block content %}
+<h2 class="text-center fw-bold mb-4 mt-4">Employee List</h2>
+<table border="1" class="container text-center">
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Department</th>
+        <th>Position</th>
+        <th>Joining Date</th>
+        <th>Actions</th>
+    </tr>
+    {% for employee in employees %}
+    <tr>
+        <td class="text-center py-4">{{ employee.first_name }}</td>
+        <td class="text-center py-4">{{ employee.last_name }}</td>
+        <td class="text-center py-4">{{ employee.department.name }}</td>
+        <td class="text-center py-4">{{ employee.position.title }}</td>
+        <td class="text-center py-4">{{employee.date_hired}}</td>
+        <td class="text-center ">
+            <a class="m-2 text-white " href="{% url 'employee_detail' employee.pk %}"><button class="btn btn-primary mr-2  px-4 py-2">View</button></a>
+            <a class="m-2 text-white" href="{% url 'employee_update' employee.pk %}"><button class="btn btn-success mr-2  px-4 py-2">Edit</button></a>
+            <a class="m-2 text-white" href="{% url 'employee_delete' employee.pk %}"><button class="btn btn-danger mr-2  px-4 py-2">Delete</button></a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

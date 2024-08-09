@@ -1,0 +1,48 @@
+<!-- employees/templates/employees/employee_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Employee Details{% endblock %}
+
+{% block content %}
+<!--Card view profile-->
+<h2 class="text-center fw-bold my-4">Employee Profile</h2>
+<div class="mx-0 my-auto d-flex align-item-center justify-content-center">
+    <div class="card" style="width: 20rem;">
+        <div class="card-header">
+            <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
+        </div>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <p><strong>Email:</strong> {{ employee.email }}</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Department:</strong> {{ employee.department.name }}</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Position:</strong> {{ employee.position.title }}</p>
+            </li>
+            <li class="list-group-item">
+                <p><strong>Date Hired:</strong> {{ employee.date_hired }}</p>
+            </li>
+            <li class="list-group-item">
+                <p class="d-flex justify-content-between">
+                    <a class="btn btn-success" href="{% url 'employee_update' employee.pk %}">Edit</a>
+                    <a class="btn btn-light" href="{% url 'employee_list' %}">Back to List</a>
+                </p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
